@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route("/auth")
 def auth():
-    noo = "ACCESS DENIED", 403
-    yes = "OK", 200
+    noo = "ACCESS DENIED\r\n", 403
+    yes = "OK\r\n", 200
 
     if not request.authorization:
         return noo

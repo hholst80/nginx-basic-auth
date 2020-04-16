@@ -13,7 +13,12 @@ def auth():
     username = request.authorization["username"]
     password = request.authorization["password"]
 
-    if username == 'foo' and password == 'bar':
+    if username == 'admin' and password == 'admin':
+        return yes
+
+    uri = request.headers["X-Original-URI"]
+
+    if uri == '/secret.txt' and username == 'foo' and password == 'bar':
         return yes
 
     return noo

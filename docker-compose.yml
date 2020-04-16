@@ -1,0 +1,13 @@
+version: '2.2'
+
+services:
+  nginx:
+    build:
+      context: .
+      args:
+        - service=nginx
+    ports:
+      - "80:80/tcp"
+  auth-server:
+    init: true
+    build: .

@@ -13,8 +13,7 @@ def auth():
     username = request.authorization["username"]
     password = request.authorization["password"]
 
-    if username != 'foo' or password != 'bar':
-        return noo
+    if username == 'foo' and password == 'bar':
+        return yes
 
-    # I'm sure it's bad practice to authorize in the otherwise path. ;-)
-    return yes
+    return noo
